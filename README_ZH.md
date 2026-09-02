@@ -2,6 +2,8 @@
 
 ![Version](https://img.shields.io/badge/version-2.4-blue)
 ![Platform](https://img.shields.io/badge/platform-Windows-0078D6)
+![Language](https://img.shields.io/badge/language-Python-3776AB?logo=python&logoColor=white)
+![Distribution](https://img.shields.io/badge/distribution-binary_only-64748B)
 ![Format](https://img.shields.io/badge/input-SHP-289C8E)
 ![Format](https://img.shields.io/badge/output-KMZ-289C8E)
 
@@ -9,7 +11,7 @@
 
 面向外业调查数据准备的批量 SHP 转 KMZ 工具。
 
-**外业调查批量 SHP 转 KMZ 工具**用于将 Shapefile 数据转换为 KMZ 文件。本仓库提供作者提供的 v2.4 Windows 打包程序及中英文使用说明。
+**外业调查批量 SHP 转 KMZ 工具**是一款采用 Python 开发并打包发布的 Windows 桌面程序，用于将 Shapefile 数据批量转换为 KMZ 文件，重点服务于外业调查、数据携带和成果快速浏览。本仓库提供作者发布的 v2.4 Windows 程序包及中英文使用说明，完整 Python 源码不公开发布。
 
 > **[直接下载 SHP2KMZ Tool v2.4 — Windows RAR 程序包](https://github.com/zhangyhrs/SHP2KMZ_Tool/raw/refs/heads/main/downloads/SHP2KMZ_Tool_v2.4.rar)**
 >
@@ -18,8 +20,9 @@
 ## 工具概述
 
 - 面向外业调查的数据准备，将 SHP 数据转换为 KMZ。
-- 工具定位为批量转换，具体操作选项以程序界面为准。
-- Windows EXE 程序与配套运行文件一起分发。
+- 支持面向重复任务的批量 SHP → KMZ 转换流程。
+- 采用 Python 开发，并以 Windows 打包程序形式发布。
+- EXE 与配套运行文件一起分发，使用时应保留完整目录结构。
 - 打包版按无需单独安装 Python 的方式分发；具体系统兼容性需在本机验证。
 
 ## 快速使用
@@ -67,9 +70,15 @@ Get-FileHash .\SHP2KMZ_Tool_v2.4.rar -Algorithm SHA256
 
 如需反馈问题，请在 [Issues](https://github.com/zhangyhrs/SHP2KMZ_Tool/issues) 中说明程序版本、Windows 版本、复现步骤，并提供脱敏截图。请勿公开涉密测绘资料、账号凭据或个人信息。
 
-## 分发说明
+## 分发与授权说明
 
-本仓库用于发布**已打包的可执行程序**，不等于公开该工具的 Python 源码，也不沿用 GeoStar 项目的 GPL 标识或许可证。具体使用授权以作者提供的条款为准；包内第三方组件仍适用各自的许可证及声明。
+本仓库用于发布**已打包的可执行程序**，不等于公开该工具的完整 Python 源码。仓库公开访问或程序包可以下载，也不等同于自动授予开源许可证项下的修改、再分发等权利；程序包内第三方组件仍分别适用各自许可证及声明。
+
+详细说明见 **[软件分发与授权说明](LICENSE_NOTICE.md)**，其中同时明确了源地理空间数据的使用责任边界。
+
+## 项目入口
+
+[更新记录](CHANGELOG.md) · [授权说明](LICENSE_NOTICE.md) · [问题反馈](https://github.com/zhangyhrs/SHP2KMZ_Tool/issues)
 
 ## 关注与交流
 
@@ -90,4 +99,4 @@ Get-FileHash .\SHP2KMZ_Tool_v2.4.rar -Algorithm SHA256
 
 **Zhang Y.H.** · GitHub [@zhangyhrs](https://github.com/zhangyhrs)
 
-相关项目：[GeoStar Selector for QGIS](https://github.com/zhangyhrs/GeoStar-Selector-QGIS)
+相关工具：[GeoStar Selector for QGIS](https://github.com/zhangyhrs/GeoStar-Selector-QGIS) · [Map Tile Downloader](https://github.com/zhangyhrs/map_tile_downloader)
