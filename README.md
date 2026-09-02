@@ -25,6 +25,12 @@ Batch Shapefile-to-KMZ conversion for field survey preparation.
 - Developed in Python and distributed as a compiled Windows application.
 - No separate Python installation is intended for this packaged distribution; actual compatibility should be checked on your Windows computer.
 
+## Application interface
+
+![SHP2KMZ Tool v2.4 application interface](assets/interface_v2.4.jpg)
+
+The main window provides input/output path selection, line-style settings, optional field-based coloring and grouped export, label-field configuration, progress status and processing logs in a single workflow.
+
 ## Quick start
 
 1. Download the RAR package above and extract **all files** to a local folder.
