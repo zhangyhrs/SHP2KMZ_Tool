@@ -2,6 +2,8 @@
 
 ![Version](https://img.shields.io/badge/version-2.4-blue)
 ![Platform](https://img.shields.io/badge/platform-Windows-0078D6)
+![Language](https://img.shields.io/badge/language-Python-3776AB?logo=python&logoColor=white)
+![Distribution](https://img.shields.io/badge/distribution-binary_only-64748B)
 ![Format](https://img.shields.io/badge/input-SHP-289C8E)
 ![Format](https://img.shields.io/badge/output-KMZ-289C8E)
 
@@ -9,7 +11,7 @@
 
 Batch Shapefile-to-KMZ conversion for field survey preparation.
 
-**SHP2KMZ Tool** (外业调查批量SHP转KMZ工具) is a packaged Windows application for converting Shapefile data into KMZ files. This repository provides the author's v2.4 application package and bilingual usage notes.
+**SHP2KMZ Tool** (外业调查批量SHP转KMZ工具) is a packaged Windows application developed in Python for converting Shapefile data into KMZ files. It is designed for field-survey data preparation and batch conversion workflows. This repository provides the author's v2.4 application package and bilingual usage notes; the complete Python source code is not publicly released.
 
 > **[Download SHP2KMZ Tool v2.4 — Windows RAR package](https://github.com/zhangyhrs/SHP2KMZ_Tool/raw/refs/heads/main/downloads/SHP2KMZ_Tool_v2.4.rar)**
 >
@@ -18,8 +20,9 @@ Batch Shapefile-to-KMZ conversion for field survey preparation.
 ## Overview
 
 - Prepare KMZ data from Shapefiles for field survey use.
-- Batch-conversion workflow, as indicated by the tool's name.
+- Batch-conversion workflow for repeated SHP-to-KMZ processing.
 - Windows executable distributed with its supporting runtime files.
+- Developed in Python and distributed as a compiled Windows application.
 - No separate Python installation is intended for this packaged distribution; actual compatibility should be checked on your Windows computer.
 
 ## Quick start
@@ -67,9 +70,15 @@ A matching checksum confirms file integrity, not malware safety or functional co
 
 For bug reports, use [Issues](https://github.com/zhangyhrs/SHP2KMZ_Tool/issues) and include the application version, Windows version, reproduction steps and a redacted screenshot. Do not post confidential survey data, credentials or personal information.
 
-## Distribution notes
+## Distribution & license notice
 
-This is a **compiled application distribution**, not a publication of the tool's Python source code. The GeoStar project's GPL badge/license is not applied to this tool. Refer to the software author's terms for permitted use; bundled third-party components remain subject to their own licenses and notices.
+This is a **compiled application distribution**, not a publication of the tool's complete Python source code. Public access to the repository or application package does not by itself grant an open-source software license. Bundled third-party components remain subject to their own licenses and notices.
+
+See **[Software Distribution & License Notice](LICENSE_NOTICE.md)** for the repository's software-distribution boundary and user responsibilities regarding source geospatial data.
+
+## Project links
+
+[Changelog](CHANGELOG.md) · [License notice](LICENSE_NOTICE.md) · [Report an issue](https://github.com/zhangyhrs/SHP2KMZ_Tool/issues)
 
 ## Follow & Connect
 
@@ -90,4 +99,4 @@ Follow **测绘地信** for surveying, remote sensing and GIS content, or visit 
 
 **Zhang Y.H.** · GitHub [@zhangyhrs](https://github.com/zhangyhrs)
 
-Related project: [GeoStar Selector for QGIS](https://github.com/zhangyhrs/GeoStar-Selector-QGIS)
+Related: [GeoStar Selector for QGIS](https://github.com/zhangyhrs/GeoStar-Selector-QGIS) · [Map Tile Downloader](https://github.com/zhangyhrs/map_tile_downloader)
