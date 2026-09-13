@@ -1,0 +1,4 @@
+PyQt5>=5.15
+# GDAL must match the native GDAL installation in your environment.
+# Recommended installation route: Conda / OSGeo-compatible environment.
+GDAL
