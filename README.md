@@ -17,6 +17,11 @@ A desktop utility for batch Shapefile-to-KMZ conversion, designed for field surv
 > **Source: [`SHP2KMZ_Tool_V2.5.0.py`](SHP2KMZ_Tool_V2.5.0.py)**  
 > **Historical package: [`SHP2KMZ_Tool_v2.4.rar`](downloads/SHP2KMZ_Tool_v2.4.rar)**
 
+## Application Interface
+
+![SHP2KMZ Tool V2.5.0 interface](assets/2.5.0.png)
+
+
 ## Features
 
 - Batch conversion from one, multiple, or a folder of Shapefiles to KMZ.
