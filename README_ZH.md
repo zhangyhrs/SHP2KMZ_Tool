@@ -1,94 +1,116 @@
 # SHP2KMZ Tool｜外业调查批量 SHP 转 KMZ 工具
 
-![Version](https://img.shields.io/badge/version-2.4-blue)
+![Version](https://img.shields.io/badge/version-2.5.0-blue)
 ![Platform](https://img.shields.io/badge/platform-Windows-0078D6)
 ![Language](https://img.shields.io/badge/language-Python-3776AB?logo=python&logoColor=white)
-![Distribution](https://img.shields.io/badge/distribution-binary_only-64748B)
+![GUI](https://img.shields.io/badge/GUI-PyQt5-41CD52)
+![License](https://img.shields.io/badge/license-GPL--3.0-green)
 ![Format](https://img.shields.io/badge/input-SHP-289C8E)
 ![Format](https://img.shields.io/badge/output-KMZ-289C8E)
 
 **[English](README.md) | 简体中文**
 
-面向外业调查数据准备的批量 SHP 转 KMZ 工具。
+面向外业调查、自然资源调查和 GIS 数据快速浏览的批量 SHP → KMZ 桌面工具。
 
-**外业调查批量 SHP 转 KMZ 工具**是一款采用 Python 开发并打包发布的 Windows 桌面程序，用于将 Shapefile 数据批量转换为 KMZ 文件，重点服务于外业调查、数据携带和成果快速浏览。本仓库提供作者发布的 v2.4 Windows 程序包及中英文使用说明，完整 Python 源码不公开发布。
+**SHP2KMZ Tool V2.5.0** 采用 Python + PyQt5 开发，在保留 V2.4 批量转换、字段着色、分组导出和图斑标注等功能的基础上，对界面、符号系统和标注位置进行了重构，并从 V2.5.0 起公开 Python 源代码。
 
-> **[直接下载 SHP2KMZ Tool v2.4 — Windows RAR 程序包](https://github.com/zhangyhrs/SHP2KMZ_Tool/raw/refs/heads/main/downloads/SHP2KMZ_Tool_v2.4.rar)**
->
-> 下载后完整解压再运行。不要用仓库“Code → Download ZIP”代替程序包下载入口。
+> **源码：[`SHP2KMZ_Tool_V2.5.0.py`](SHP2KMZ_Tool_V2.5.0.py)**  
+> **历史打包版：[`SHP2KMZ_Tool_v2.4.rar`](downloads/SHP2KMZ_Tool_v2.4.rar)**
 
-## 工具概述
+## 主要功能
 
-- 面向外业调查的数据准备，将 SHP 数据转换为 KMZ。
-- 支持面向重复任务的批量 SHP → KMZ 转换流程。
-- 采用 Python 开发，并以 Windows 打包程序形式发布。
-- EXE 与配套运行文件一起分发，使用时应保留完整目录结构。
-- 打包版按无需单独安装 Python 的方式分发；具体系统兼容性需在本机验证。
+- **批量转换**：支持选择单个、多个 SHP 或整个文件夹，批量输出 KMZ。
+- **坐标处理**：读取源空间参考并转换至 CGCS2000 地理坐标系；兼容 GDAL 3+ 轴顺序。
+- **边线样式**：可设置线宽和默认颜色。
+- **字段分组着色**：按指定字段值设置不同边线颜色。
+- **字段分组导出**：按字段值分别生成 KMZ，命名为“原SHP名_分组值_数量.kmz”。
+- **图斑标注**：可设置标注字段、字号、字体颜色。
+- **标注符号**：内置基础符号、调查标记和提示符号，可设置符号颜色和大小。
+- **离线符号**：符号动态生成 PNG 并写入 KMZ，不依赖在线图标。
+- **标注位置**：支持自动推荐、几何质心、面内点、外接矩形中心和顶点平均中心。
+- **后台处理**：使用 QThread 执行转换，提供进度和运行日志。
 
-## 软件运行界面
+## V2.5.0 重点更新
 
-![外业调查批量 SHP 转 KMZ 工具 v2.4 软件运行界面](assets/interface_v2.4.jpg)
+V2.5.0 将 GUI 从旧版界面重构为 PyQt5，同时保留 V2.4 的核心能力，并增加：
 
-软件主界面集中提供输入与输出路径设置、边线样式、字段分组着色、分组导出、标注字段设置、处理进度和运行日志等功能，可在一个窗口内完成从 SHP 数据选择到 KMZ 成果输出的主要配置与转换操作。
+- 现代化、可滚动的响应式界面；
+- 可视化符号库；
+- 符号颜色和大小设置；
+- 符号随 KMZ 本地打包；
+- 多种标注位置算法；
+- 版权信息在源码和界面中统一显示；
+- 完整 Python 源代码公开。
 
-## 快速使用
+## 源码运行
 
-1. 点击上方链接下载 RAR 程序包，完整解压到本地文件夹。
-2. 保留 EXE、DLL 和所有配套子文件夹，不要只复制 EXE。
-3. 双击运行 `0shp_to_kmz_2.4.exe`。
-4. 按程序界面选择 SHP 输入数据及输出位置，启动转换。
-5. 在实际使用的地图软件中打开输出 KMZ，检查要素数量、空间位置、属性和显示效果，再用于外业。
+### 环境
 
-建议先用少量、不涉密的数据测试。本次仓库整理未在 Windows 环境运行该 EXE，不代表已完成软件功能和兼容性测试。
+建议使用 Python 3.8+。主要依赖：
 
-## 数据准备
-
-- 同名 `.shp`、`.shx`、`.dbf` 文件应完整放在一起；有 `.prj`、`.cpg` 时也请保留。
-- 确认源数据坐标系，不要为使图形显示而随意指定坐标系。
-- 使用原始数据的副本，并设置独立输出目录。
-- 在实际目标软件中检查 KMZ；不同软件的坐标处理和显示可能存在差异。
-
-## 下载与校验
-
-| 项目 | 内容 |
-|---|---|
-| 版本 | 2.4 |
-| 程序包 | `SHP2KMZ_Tool_v2.4.rar` |
-| 文件大小 | 25,903,513 字节，约 24.70 MiB |
-| 启动文件 | `0shp_to_kmz_2.4.exe` |
-
-上传的是原始程序包，仅使用便于下载的文件名，包内文件未经修改。校验值见 [SHA-256 校验文件](downloads/SHA256SUMS.txt)。
-
-在 PowerShell 中执行：
-
-```powershell
-Get-FileHash .\SHP2KMZ_Tool_v2.4.rar -Algorithm SHA256
+```text
+PyQt5
+GDAL
 ```
 
-校验值一致只能证明文件内容一致，不代表病毒扫描或功能测试通过。
+GDAL 建议通过 Conda/OSGeo 环境安装，以确保本地 GDAL 与 Python 绑定版本一致。
 
-## 常见问题
+### 运行
 
-- **缺少 DLL、无法启动：**检查是否完整解压，是否保持原有目录结构。
-- **位置偏移：**检查源数据坐标系信息及目标地图软件的坐标解释。
-- **属性乱码：**检查输入数据编码及配套 `.cpg` 文件。
-- **安全软件提示：**核对下载来源并扫描文件，不建议关闭安全防护强行运行。
+将 `icon.png` 放在程序源码同目录（可选；不存在时程序仍可运行），然后执行：
 
-如需反馈问题，请在 [Issues](https://github.com/zhangyhrs/SHP2KMZ_Tool/issues) 中说明程序版本、Windows 版本、复现步骤，并提供脱敏截图。请勿公开涉密测绘资料、账号凭据或个人信息。
+```bash
+python SHP2KMZ_Tool_V2.5.0.py
+```
 
-## 分发与授权说明
+## 数据要求
 
-本仓库用于发布**已打包的可执行程序**，不等于公开该工具的完整 Python 源码。仓库公开访问或程序包可以下载，也不等同于自动授予开源许可证项下的修改、再分发等权利；程序包内第三方组件仍分别适用各自许可证及声明。
+Shapefile 建议至少保持以下同名文件完整：
 
-详细说明见 **[软件分发与授权说明](LICENSE_NOTICE.md)**，其中同时明确了源地理空间数据的使用责任边界。
+```text
+.shp
+.shx
+.dbf
+```
 
-## 项目入口
+如有 `.prj`、`.cpg` 也应保留。坐标系信息不明确时请先核实，不建议为了“能显示”而随意指定坐标系。
 
-[更新记录](CHANGELOG.md) · [授权说明](LICENSE_NOTICE.md) · [问题反馈](https://github.com/zhangyhrs/SHP2KMZ_Tool/issues)
+## 历史 Windows 程序包
+
+仓库仍保留 V2.4 Windows RAR 程序包，便于旧版本用户继续使用：
+
+[`downloads/SHP2KMZ_Tool_v2.4.rar`](downloads/SHP2KMZ_Tool_v2.4.rar)
+
+该文件作为历史版本保留，V2.5.0 的主要开发基线为公开源码。
+
+## 许可证与版权
+
+Copyright (c) 2026 Zhang Y.H.
+
+本项目 V2.5.0 源代码按 **GNU General Public License v3.0 (GPL-3.0)** 发布，详见 [LICENSE](LICENSE)。
+
+第三方依赖仍分别适用其自身许可证；其中 PyQt5 的许可条件请以 Riverbank Computing 官方条款为准。项目中提及 ArcGIS/Esri 仅用于说明 GIS 符号库的交互风格，本项目未直接分发 ArcGIS/Esri 原始符号资源。
+
+用户应自行确认待处理地理空间数据具有合法处理、复制、共享和发布权限，并遵守相应保密要求。
+
+## 问题反馈
+
+如发现问题，请通过 [Issues](https://github.com/zhangyhrs/SHP2KMZ_Tool/issues) 提交：
+
+- 软件版本；
+- Windows / Python / GDAL 版本；
+- 问题复现步骤；
+- 脱敏后的日志或截图。
+
+请勿上传涉密测绘资料、账号凭据或个人敏感信息。
+
+## 更新记录
+
+详见 [CHANGELOG.md](CHANGELOG.md)。
 
 ## 关注与交流
 
-欢迎关注微信公众号 **测绘地信**，获取遥感、测绘与 GIS 技术内容；也可访问知识星球 **测绘地理信息共享中心**，交流软件工具与专业资料。点击图片可查看原图。
+欢迎关注微信公众号 **测绘地信**，也可访问知识星球 **测绘地理信息共享中心**。
 
 <table>
   <tr>
