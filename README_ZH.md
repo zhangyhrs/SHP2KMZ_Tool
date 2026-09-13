@@ -17,6 +17,11 @@
 > **源码：[`SHP2KMZ_Tool_V2.5.0.py`](SHP2KMZ_Tool_V2.5.0.py)**  
 > **历史打包版：[`SHP2KMZ_Tool_v2.4.rar`](downloads/SHP2KMZ_Tool_v2.4.rar)**
 
+## 软件运行界面
+
+![SHP2KMZ Tool V2.5.0 软件运行界面](assets/2.5.0.png)
+
+
 ## 主要功能
 
 - **批量转换**：支持选择单个、多个 SHP 或整个文件夹，批量输出 KMZ。
