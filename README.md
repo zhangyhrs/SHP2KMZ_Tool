@@ -1,94 +1,91 @@
 # SHP2KMZ Tool
 
-![Version](https://img.shields.io/badge/version-2.4-blue)
+![Version](https://img.shields.io/badge/version-2.5.0-blue)
 ![Platform](https://img.shields.io/badge/platform-Windows-0078D6)
 ![Language](https://img.shields.io/badge/language-Python-3776AB?logo=python&logoColor=white)
-![Distribution](https://img.shields.io/badge/distribution-binary_only-64748B)
+![GUI](https://img.shields.io/badge/GUI-PyQt5-41CD52)
+![License](https://img.shields.io/badge/license-GPL--3.0-green)
 ![Format](https://img.shields.io/badge/input-SHP-289C8E)
 ![Format](https://img.shields.io/badge/output-KMZ-289C8E)
 
 **English | [简体中文](README_ZH.md)**
 
-Batch Shapefile-to-KMZ conversion for field survey preparation.
+A desktop utility for batch Shapefile-to-KMZ conversion, designed for field survey preparation and GIS data review.
 
-**SHP2KMZ Tool** (外业调查批量SHP转KMZ工具) is a packaged Windows application developed in Python for converting Shapefile data into KMZ files. It is designed for field-survey data preparation and batch conversion workflows. This repository provides the author's v2.4 application package and bilingual usage notes; the complete Python source code is not publicly released.
+**SHP2KMZ Tool V2.5.0** is developed with Python and PyQt5. It keeps the core batch conversion, field-based coloring, grouped export and polygon labeling workflows from V2.4, while redesigning the interface, symbol system and label-position controls. Starting with V2.5.0, the Python source code is publicly available.
 
-> **[Download SHP2KMZ Tool v2.4 — Windows RAR package](https://github.com/zhangyhrs/SHP2KMZ_Tool/raw/refs/heads/main/downloads/SHP2KMZ_Tool_v2.4.rar)**
->
-> Extract the entire archive before running the application. Do not download GitHub's “Code → Download ZIP” as a substitute for the application package.
+> **Source: [`SHP2KMZ_Tool_V2.5.0.py`](SHP2KMZ_Tool_V2.5.0.py)**  
+> **Historical package: [`SHP2KMZ_Tool_v2.4.rar`](downloads/SHP2KMZ_Tool_v2.4.rar)**
 
-## Overview
+## Features
 
-- Prepare KMZ data from Shapefiles for field survey use.
-- Batch-conversion workflow for repeated SHP-to-KMZ processing.
-- Windows executable distributed with its supporting runtime files.
-- Developed in Python and distributed as a compiled Windows application.
-- No separate Python installation is intended for this packaged distribution; actual compatibility should be checked on your Windows computer.
+- Batch conversion from one, multiple, or a folder of Shapefiles to KMZ.
+- CRS handling and conversion to CGCS2000 geographic coordinates, including GDAL 3+ traditional GIS axis order.
+- Configurable polygon outline width and color.
+- Field-based outline coloring with per-value color mapping.
+- Grouped KMZ export by attribute value.
+- Label field, text size and text color controls.
+- Built-in point symbol library with configurable symbol color and size.
+- Offline symbol packaging: symbols are rendered as PNG and embedded in the KMZ.
+- Five label-position modes: Auto, Centroid, Point on Surface, Envelope Center and Vertex Average Center.
+- Background conversion using QThread with progress and logs.
 
-## Application interface
+## What's new in V2.5.0
 
-![SHP2KMZ Tool v2.4 application interface](assets/interface_v2.4.jpg)
+- PyQt5-based responsive interface.
+- Visual symbol library.
+- Symbol color and scale controls.
+- Local/offline KMZ symbol embedding.
+- Multiple label-position algorithms.
+- Copyright notice in source code and application UI.
+- Public Python source release.
 
-The main window provides input/output path selection, line-style settings, optional field-based coloring and grouped export, label-field configuration, progress status and processing logs in a single workflow.
+## Run from source
 
-## Quick start
+Recommended: Python 3.8+.
 
-1. Download the RAR package above and extract **all files** to a local folder.
-2. Keep the executable, DLLs, and bundled subfolders together.
-3. Start `0shp_to_kmz_2.4.exe`.
-4. Use the application's controls to select your Shapefile input and output location, then start conversion.
-5. Open the resulting KMZ in your intended viewer and check feature counts, location, attributes and display before field deployment.
+Main dependencies:
 
-Start with a small, non-sensitive test dataset. The executable has not been run or functionally validated in this repository publishing process.
-
-## Prepare your data
-
-- Keep matching `.shp`, `.shx` and `.dbf` files together. Retain `.prj` and `.cpg` files when available.
-- Confirm the source coordinate reference system. Do not guess a CRS merely to make the data appear on a map.
-- Work from a copy and use a separate output folder.
-- Inspect the KMZ in the actual target application; coordinate handling and display can differ between viewers.
-
-## Download verification
-
-| Item | Value |
-|---|---|
-| Version | 2.4 |
-| Package | `SHP2KMZ_Tool_v2.4.rar` |
-| Size | 25,903,513 bytes (about 24.70 MiB) |
-| Entry point | `0shp_to_kmz_2.4.exe` |
-
-The archive is the original supplied package with a download-friendly filename; its contents have not been modified. See [SHA-256 checksum](downloads/SHA256SUMS.txt).
-
-In PowerShell:
-
-```powershell
-Get-FileHash .\SHP2KMZ_Tool_v2.4.rar -Algorithm SHA256
+```text
+PyQt5
+GDAL
 ```
 
-A matching checksum confirms file integrity, not malware safety or functional correctness.
+GDAL is best installed through Conda or an OSGeo-compatible environment so the native GDAL library and Python bindings match.
 
-## Troubleshooting
+Run:
 
-- **Missing DLL or application cannot start:** extract the complete package and keep the directory structure intact.
-- **Misplaced features:** check source CRS information and the coordinate interpretation of your target viewer.
-- **Unreadable attribute text:** check the input encoding and associated `.cpg` file.
-- **Security warning:** check the download source and scan the file. Do not disable antivirus protection to run it.
+```bash
+python SHP2KMZ_Tool_V2.5.0.py
+```
 
-For bug reports, use [Issues](https://github.com/zhangyhrs/SHP2KMZ_Tool/issues) and include the application version, Windows version, reproduction steps and a redacted screenshot. Do not post confidential survey data, credentials or personal information.
+Place `icon.png` next to the script if you want the custom application icon. The program still runs if the file is absent.
 
-## Distribution & license notice
+## Data preparation
 
-This is a **compiled application distribution**, not a publication of the tool's complete Python source code. Public access to the repository or application package does not by itself grant an open-source software license. Bundled third-party components remain subject to their own licenses and notices.
+Keep matching `.shp`, `.shx` and `.dbf` files together. Retain `.prj` and `.cpg` when available. Verify the actual source CRS before conversion.
 
-See **[Software Distribution & License Notice](LICENSE_NOTICE.md)** for the repository's software-distribution boundary and user responsibilities regarding source geospatial data.
+## License and copyright
 
-## Project links
+Copyright (c) 2026 Zhang Y.H.
 
-[Changelog](CHANGELOG.md) · [License notice](LICENSE_NOTICE.md) · [Report an issue](https://github.com/zhangyhrs/SHP2KMZ_Tool/issues)
+The V2.5.0 source code is released under the **GNU General Public License v3.0 (GPL-3.0)**. See [LICENSE](LICENSE).
+
+Third-party dependencies remain subject to their own licenses. References to ArcGIS/Esri describe GIS-style symbol-library interaction only; this repository does not distribute ArcGIS/Esri original symbol assets.
+
+Users are responsible for ensuring that source geospatial data may legally be processed, copied, shared, or published.
+
+## Issues
+
+Please report bugs via [Issues](https://github.com/zhangyhrs/SHP2KMZ_Tool/issues) with the application version, Windows/Python/GDAL versions, reproduction steps and redacted logs or screenshots. Do not post confidential survey data, credentials or personal information.
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
 
 ## Follow & Connect
 
-Follow **测绘地信** for surveying, remote sensing and GIS content, or visit the **测绘地理信息共享中心** Knowledge Planet community. Click an image to view it at full size.
+Follow **测绘地信** for surveying, remote sensing and GIS content, or visit the **测绘地理信息共享中心** community.
 
 <table>
   <tr>
@@ -96,13 +93,11 @@ Follow **测绘地信** for surveying, remote sensing and GIS content, or visit 
     <th width="50%">Knowledge Planet<br>测绘地理信息共享中心</th>
   </tr>
   <tr>
-    <td align="center" valign="middle"><a href="assets/wechat-official-account.png"><img src="assets/wechat-official-account.png" alt="微信公众号：测绘地信" height="140"></a></td>
-    <td align="center" valign="middle"><a href="assets/knowledge-planet.jpg"><img src="assets/knowledge-planet.jpg" alt="知识星球：测绘地理信息共享中心" height="140"></a></td>
+    <td align="center" valign="middle"><a href="assets/wechat-official-account.png"><img src="assets/wechat-official-account.png" alt="WeChat Official Account: 测绘地信" height="140"></a></td>
+    <td align="center" valign="middle"><a href="assets/knowledge-planet.jpg"><img src="assets/knowledge-planet.jpg" alt="Knowledge Planet: 测绘地理信息共享中心" height="140"></a></td>
   </tr>
 </table>
 
 ## Author
 
 **Zhang Y.H.** · GitHub [@zhangyhrs](https://github.com/zhangyhrs)
-
-Related: [GeoStar Selector for QGIS](https://github.com/zhangyhrs/GeoStar-Selector-QGIS) · [Map Tile Downloader](https://github.com/zhangyhrs/map_tile_downloader)
