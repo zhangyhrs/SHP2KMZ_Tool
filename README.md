@@ -14,8 +14,9 @@ A desktop utility for batch Shapefile-to-KMZ conversion, designed for field surv
 
 **SHP2KMZ Tool V2.5.0** is developed with Python and PyQt5. It keeps the core batch conversion, field-based coloring, grouped export and polygon labeling workflows from V2.4, while redesigning the interface, symbol system and label-position controls. Starting with V2.5.0, the Python source code is publicly available.
 
-> **Source: [`SHP2KMZ_Tool_V2.5.0.py`](SHP2KMZ_Tool_V2.5.0.py)**  
-> **Historical package: [`SHP2KMZ_Tool_v2.4.rar`](downloads/SHP2KMZ_Tool_v2.4.rar)**
+> **Latest release: [SHP2KMZ Tool V2.5.0](https://github.com/zhangyhrs/SHP2KMZ_Tool/releases/tag/v2.5.0)**  
+> **Windows download: [SHP2KMZ_Tool_V2.5.0.zip](https://github.com/zhangyhrs/SHP2KMZ_Tool/releases/download/v2.5.0/SHP2KMZ_Tool_V2.5.0.zip)**  
+> **Source: [`SHP2KMZ_Tool_V2.5.0.py`](SHP2KMZ_Tool_V2.5.0.py)**
 
 ## Application Interface
 
@@ -65,6 +66,34 @@ python SHP2KMZ_Tool_V2.5.0.py
 ```
 
 Place `icon.png` next to the script if you want the custom application icon. The program still runs if the file is absent.
+
+## Download
+
+### Windows release
+
+The current stable release is **V2.5.0**.
+
+Download:
+
+[SHP2KMZ_Tool_V2.5.0.zip](https://github.com/zhangyhrs/SHP2KMZ_Tool/releases/download/v2.5.0/SHP2KMZ_Tool_V2.5.0.zip)
+
+Extract the ZIP and run the EXE directly. No separate Python installation is required.
+
+Release notes:
+
+[Release v2.5.0](https://github.com/zhangyhrs/SHP2KMZ_Tool/releases/tag/v2.5.0)
+
+### Source code
+
+For learning, modification or secondary development, use:
+
+[`SHP2KMZ_Tool_V2.5.0.py`](SHP2KMZ_Tool_V2.5.0.py)
+
+### Historical version
+
+The V2.4 Windows package remains available:
+
+[`downloads/SHP2KMZ_Tool_v2.4.rar`](downloads/SHP2KMZ_Tool_v2.4.rar)
 
 ## Data preparation
 
