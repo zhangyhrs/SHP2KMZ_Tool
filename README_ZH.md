@@ -14,8 +14,9 @@
 
 **SHP2KMZ Tool V2.5.0** 采用 Python + PyQt5 开发，在保留 V2.4 批量转换、字段着色、分组导出和图斑标注等功能的基础上，对界面、符号系统和标注位置进行了重构，并从 V2.5.0 起公开 Python 源代码。
 
-> **源码：[`SHP2KMZ_Tool_V2.5.0.py`](SHP2KMZ_Tool_V2.5.0.py)**  
-> **历史打包版：[`SHP2KMZ_Tool_v2.4.rar`](downloads/SHP2KMZ_Tool_v2.4.rar)**
+> **最新发布版： [SHP2KMZ Tool V2.5.0](https://github.com/zhangyhrs/SHP2KMZ_Tool/releases/tag/v2.5.0)**  
+> **Windows 下载： [SHP2KMZ_Tool_V2.5.0.zip](https://github.com/zhangyhrs/SHP2KMZ_Tool/releases/download/v2.5.0/SHP2KMZ_Tool_V2.5.0.zip)**  
+> **源代码： [`SHP2KMZ_Tool_V2.5.0.py`](SHP2KMZ_Tool_V2.5.0.py)**
 
 ## 软件运行界面
 
@@ -80,13 +81,33 @@ Shapefile 建议至少保持以下同名文件完整：
 
 如有 `.prj`、`.cpg` 也应保留。坐标系信息不明确时请先核实，不建议为了“能显示”而随意指定坐标系。
 
-## 历史 Windows 程序包
+## 下载与使用
 
-仓库仍保留 V2.4 Windows RAR 程序包，便于旧版本用户继续使用：
+### Windows 发布版
+
+当前正式发布版本为 **V2.5.0**。
+
+可直接下载：
+
+[SHP2KMZ_Tool_V2.5.0.zip](https://github.com/zhangyhrs/SHP2KMZ_Tool/releases/download/v2.5.0/SHP2KMZ_Tool_V2.5.0.zip)
+
+解压后运行 EXE 即可，无需单独安装 Python。
+
+完整发布说明：
+
+[Release v2.5.0](https://github.com/zhangyhrs/SHP2KMZ_Tool/releases/tag/v2.5.0)
+
+### 源码运行
+
+如需二次开发或学习，可直接使用仓库中的：
+
+[`SHP2KMZ_Tool_V2.5.0.py`](SHP2KMZ_Tool_V2.5.0.py)
+
+### 历史版本
+
+V2.4 Windows 历史程序包继续保留：
 
 [`downloads/SHP2KMZ_Tool_v2.4.rar`](downloads/SHP2KMZ_Tool_v2.4.rar)
-
-该文件作为历史版本保留，V2.5.0 的主要开发基线为公开源码。
 
 ## 许可证与版权
 
