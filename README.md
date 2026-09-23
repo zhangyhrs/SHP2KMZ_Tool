@@ -22,7 +22,6 @@ A desktop utility for batch Shapefile-to-KMZ conversion, designed for field surv
 
 ![SHP2KMZ Tool V2.5.0 interface](assets/2.5.0.png)
 
-
 ## Features
 
 - Batch conversion from one, multiple, or a folder of Shapefiles to KMZ.
@@ -123,12 +122,14 @@ Follow **测绘地信** for surveying, remote sensing and GIS content, or visit 
 
 <table>
   <tr>
-    <th width="50%">WeChat Official Account<br>测绘地信</th>
-    <th width="50%">Knowledge Planet<br>测绘地理信息共享中心</th>
+    <th width="33%">WeChat Official Account<br>测绘地信</th>
+    <th width="33%">WeChat Mini Program<br>测绘地信</th>
+    <th width="33%">Knowledge Planet<br>测绘地理信息共享中心</th>
   </tr>
   <tr>
-    <td align="center" valign="middle"><a href="assets/wechat-official-account.png"><img src="assets/wechat-official-account.png" alt="WeChat Official Account: 测绘地信" height="140"></a></td>
-    <td align="center" valign="middle"><a href="assets/knowledge-planet.jpg"><img src="assets/knowledge-planet.jpg" alt="Knowledge Planet: 测绘地理信息共享中心" height="140"></a></td>
+    <td align="center" valign="middle"><img src="https://raw.githubusercontent.com/zhangyhrs/GeoStar-Selector-QGIS/main/assets/wechat-official-account.png" alt="WeChat Official Account: 测绘地信" height="140"></td>
+    <td align="center" valign="middle"><img src="https://raw.githubusercontent.com/zhangyhrs/GeoStar-Selector-QGIS/main/assets/wechat-mini-program.jpg" alt="WeChat Mini Program: 测绘地信" height="140"></td>
+    <td align="center" valign="middle"><img src="https://raw.githubusercontent.com/zhangyhrs/GeoStar-Selector-QGIS/main/assets/knowledge-planet.jpg" alt="Knowledge Planet: 测绘地理信息共享中心" height="140"></td>
   </tr>
 </table>
 
