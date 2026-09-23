@@ -136,16 +136,18 @@ Copyright (c) 2026 Zhang Y.H.
 
 ## 关注与交流
 
-欢迎关注微信公众号 **测绘地信**，也可访问知识星球 **测绘地理信息共享中心**。
+欢迎关注微信公众号 **测绘地信**、微信小程序 **测绘地信**，也可访问知识星球 **测绘地理信息共享中心**。
 
 <table>
   <tr>
-    <th width="50%">微信公众号<br>测绘地信</th>
-    <th width="50%">知识星球<br>测绘地理信息共享中心</th>
+    <th width="33%">WeChat Official Account<br>微信公众号：测绘地信</th>
+    <th width="33%">WeChat Mini Program<br>微信小程序：测绘地信</th>
+    <th width="33%">Knowledge Planet<br>知识星球：测绘地理信息共享中心</th>
   </tr>
   <tr>
-    <td align="center" valign="middle"><a href="assets/wechat-official-account.png"><img src="assets/wechat-official-account.png" alt="微信公众号：测绘地信" height="140"></a></td>
-    <td align="center" valign="middle"><a href="assets/knowledge-planet.jpg"><img src="assets/knowledge-planet.jpg" alt="知识星球：测绘地理信息共享中心" height="140"></a></td>
+    <td align="center" valign="middle"><img src="https://raw.githubusercontent.com/zhangyhrs/GeoStar-Selector-QGIS/main/assets/wechat-official-account.png" alt="微信公众号：测绘地信" height="150"></td>
+    <td align="center" valign="middle"><img src="https://raw.githubusercontent.com/zhangyhrs/GeoStar-Selector-QGIS/main/assets/wechat-mini-program.jpg" alt="微信小程序：测绘地信" height="150"></td>
+    <td align="center" valign="middle"><img src="https://raw.githubusercontent.com/zhangyhrs/GeoStar-Selector-QGIS/main/assets/knowledge-planet.jpg" alt="知识星球：测绘地理信息共享中心" height="150"></td>
   </tr>
 </table>
 
